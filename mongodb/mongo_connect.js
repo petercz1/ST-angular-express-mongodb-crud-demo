@@ -9,11 +9,4 @@ var schema = new mongoose.Schema({
 
 var USERCLASS = mongoose.model('user', schema);
 
-
-var person = {
-  user: 'bertie'
-}
-var newUser = new USERCLASS(person);
-newUser.
-
 module.exports = USERCLASS;
