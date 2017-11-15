@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>angular demo</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="js/frontend_app.js"></script>
+
+</head>
+
+<body ng-app="demo_app">
+    <h1>CRUD demo AngularJS/Express/MongoDB</h1>
+
+    <div ng-controller="process_data">
+        <h3>Message: {{message}}</h3>
+        <div>
+            <input type="text" name="user" ng-model="input_name">
+            <input type="submit" value="submit" ng-click='create()'>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>user</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in people">
+                    <td>{{person._id}}</td>
+                    <td>
+                        <input type="text" ng-model="person.user">
+                    </td>
+                    <td>
+                        <button ng-click="update(person)">update</button>
+                    </td>
+                    <td>
+                        <button ng-click="delete(person)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
