@@ -29,6 +29,7 @@ function process_data($scope, $http) {
         $scope.read();
       });
   }
+  
   $scope.update = function (person) {
     console.log('updating...');
     console.log(person);
