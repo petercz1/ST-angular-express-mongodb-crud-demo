@@ -6,14 +6,13 @@ front_app.controller('process_data', process_data);
 
 function process_data($scope, $http) {
   console.log('loading all data crud functions');
-  $scope.message = 'good morning.';
   
   $scope.read = function () {
     console.log('running scope.get...');
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
-        $scope.message = "got list of people\n" + $scope.message;
+        console.log('got list of people');
       });
   }
   $scope.read();
@@ -29,7 +28,7 @@ function process_data($scope, $http) {
         $scope.read();
       });
   }
-  
+
   $scope.update = function (person) {
     console.log('updating...');
     console.log(person);
