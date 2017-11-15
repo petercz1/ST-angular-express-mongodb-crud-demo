@@ -12,7 +12,7 @@ function process_data($scope, $http) {
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
-        console.log('got list of people');
+        console.log('got list of users');
       });
   }
 

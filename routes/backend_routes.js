@@ -56,6 +56,6 @@ function delete_data(req, res) {
   USERCLASS.findByIdAndRemove(req.params._id, function (err, data) {
     if(err) return err;
     console.log('deleted!'); 
-    res.send('backend deleted user.');   
+    res.send('backend has deleted user.');   
   })
 }
