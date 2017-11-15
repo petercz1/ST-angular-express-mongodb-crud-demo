@@ -15,6 +15,7 @@ function process_data($scope, $http) {
         console.log('got list of people');
       });
   }
+  // now fire off the read function
   $scope.read();
 
   $scope.create = function () {
@@ -39,20 +40,15 @@ function process_data($scope, $http) {
       .then(function (response) {
         console.log(response);
         $scope.read();
-      })
-      .then(function (err) {
-        if (err) {
-          console.log(err);
-        }
       });
   }
 
   $scope.delete = function (person) {
     console.log('deleting...');
     console.log(person);
-    
-    $http.delete('/api/index/' + person._id).then(function (response) {
-      $scope.message = response.data + "\n" + $scope.message;
+
+    $http.delete('/api/index/' + person._id)
+    .then(function (response) {
       console.log(response);
       $scope.read();
     });
