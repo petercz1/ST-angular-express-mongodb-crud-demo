@@ -32,20 +32,16 @@
             </thead>
 
             <tbody>
+
                 <tr ng-repeat="person in people">
                     <td>{{person._id}}</td>
-                    <td>
-                        <input type="text" ng-model="person.user">
-                    </td>
-                    <td>
-                        <button ng-click="update(person)">update</button>
-                    </td>
-                    <td>
-                        <button ng-click="delete(person)">delete</button>
-                    </td>
+                    <td><input type="text" ng-model="person.user"></td>
+                    <td><button ng-click="update(person)">update</button></td>
+                    <td><button ng-click="delete(person)">delete</button></td>
                 </tr>
+                
             </tbody>
-            
+
         </table>
     </div>
 </body>
