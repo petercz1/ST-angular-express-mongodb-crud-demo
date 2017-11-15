@@ -7,6 +7,7 @@ front_app.controller('process_data', process_data);
 function process_data($scope, $http) {
   console.log('loading all data crud functions');
   
+  // 
   $scope.read = function () {
     console.log('getting list of users');
     $http.get('/api/index')
