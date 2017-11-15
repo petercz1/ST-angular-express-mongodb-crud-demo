@@ -37,7 +37,7 @@ function post_single_data(req, res) {
       }
       console.log('saved!');
     })
-  res.send('created user.');
+  res.send('backend has created user.');
 }
 
 function put_data(req, res) {
@@ -46,7 +46,7 @@ function put_data(req, res) {
   USERCLASS.findByIdAndUpdate(req.body._id, {$set: {user: req.body.user}},function (err, data) {
     if(err) return err;
     console.log('updated!');
-    res.send('backend updated.');
+    res.send('backend has updated.');
   })
 }
 
@@ -56,6 +56,6 @@ function delete_data(req, res) {
   USERCLASS.findByIdAndRemove(req.params._id, function (err, data) {
     if(err) return err;
     console.log('deleted!'); 
-    res.send('backend deleted.');   
+    res.send('backend deleted user.');   
   })
 }
