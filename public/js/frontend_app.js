@@ -25,7 +25,6 @@ function process_data($scope, $http) {
     $http.post('/api/index', data)
       .then(function (response) {
         $scope.message = response + "\n" + $scope.message;
-      });;
         console.log(response);
         $scope.read();
       });
@@ -35,7 +34,7 @@ function process_data($scope, $http) {
     console.log(person);
     $http.put('/api/index', person)
       .then(function (response) {
-        $scope.message = response;
+        $scope.message = response + "\n" + $scope.message;
         console.log(response);
         $scope.read();
       })
@@ -50,7 +49,7 @@ function process_data($scope, $http) {
     console.log('deleting...');
     console.log(person);
     $http.delete('/api/index/' + person._id).then(function (response) {
-      $scope.message = response;
+      $scope.message = response + "\n" + $scope.message;
       console.log(response);
       $scope.read();
     });
