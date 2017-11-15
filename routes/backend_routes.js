@@ -46,7 +46,7 @@ function put_data(req, res) {
   USERCLASS.findByIdAndUpdate(req.body._id, {$set: {user: req.body.user}},function (err, data) {
     if(err) return err;
     console.log('updated!');
-    res.send('backend has updated.');
+    res.send('backend has updated user.');
   })
 }
 

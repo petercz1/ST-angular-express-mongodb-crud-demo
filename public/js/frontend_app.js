@@ -15,12 +15,12 @@ function process_data($scope, $http) {
         console.log('got list of people');
       });
   }
-  
+
   // now fire off the read function to get list of users
   $scope.read();
 
   $scope.create = function () {
-    console.log('creating user');
+    console.log('creating user...');
     var data = {
       user: $scope.input_name
     }
@@ -34,7 +34,7 @@ function process_data($scope, $http) {
   }
 
   $scope.update = function (person) {
-    console.log('updating...');
+    console.log('updating user...');
     console.log(person);
 
     $http.put('/api/index', person)
@@ -45,7 +45,7 @@ function process_data($scope, $http) {
   }
 
   $scope.delete = function (person) {
-    console.log('deleting...');
+    console.log('deleting user...');
     console.log(person);
 
     $http.delete('/api/index/' + person._id)
