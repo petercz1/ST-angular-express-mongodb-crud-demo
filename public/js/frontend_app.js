@@ -1,4 +1,5 @@
 console.log('loaded main.js');
+// $scope is simply the data object!
 
 var front_app = angular.module('demo_app', []);
 front_app.controller('process_data', process_data);
