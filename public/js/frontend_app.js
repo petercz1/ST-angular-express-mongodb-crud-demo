@@ -5,6 +5,7 @@ var front_app = angular.module('demo_app', []);
 front_app.controller('process_data', process_data);
 
 function process_data($scope, $http) {
+  console.log($scope);
   console.log('listing data');
   $scope.message = 'good morning.';
   
