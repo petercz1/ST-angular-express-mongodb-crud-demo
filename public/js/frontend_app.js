@@ -8,7 +8,7 @@ function process_data($scope, $http) {
   console.log('loading all data crud functions');
   
   $scope.read = function () {
-    console.log('running scope.get...');
+    console.log('getting list of people');
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
@@ -18,12 +18,12 @@ function process_data($scope, $http) {
   $scope.read();
 
   $scope.create = function () {
+    console.log('creating user');
     var data = {
       user: $scope.input_name
     }
     $http.post('/api/index', data)
       .then(function (response) {
-        $scope.message = response.data + "\n" + $scope.message;
         console.log(response);
         $scope.read();
       });
