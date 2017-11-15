@@ -21,10 +21,8 @@ function process_data($scope, $http) {
 
   $scope.create = function () {
     var data = {
-      user: $scope.input_name,
-      pass: $scope.input_pass
+      user: $scope.input_name
     }
-    console.log(data);
     $http.post('/api/index', data)
       .then(function (response) {
         $scope.message = response;
