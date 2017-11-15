@@ -17,7 +17,7 @@ function process_data($scope, $http) {
         $scope.message = 'got list of people';
       });
   }
-  $scope.get();
+  $scope.read();
 
   $scope.create = function () {
     var data = {
@@ -28,7 +28,7 @@ function process_data($scope, $http) {
     $http.post('/api/index', data)
       .then(function (response) {
         $scope.message = response;
-        $scope.get();
+        $scope.read();
       });
   }
   $scope.update = function (person) {
@@ -38,7 +38,7 @@ function process_data($scope, $http) {
       .then(function (response) {
         console.log(response);
         $scope.message = 'updated user';
-        $scope.get();
+        $scope.read();
       })
       .then(function (err) {
         if (err) {
@@ -54,11 +54,7 @@ function process_data($scope, $http) {
       console.log(response);
       console.log('deleted?');
       $scope.message = 'deleted user';
-      $scope.get();
-    }).then(function (err) {
-      if (err) {
-        console.log(err);;
-      };
+      $scope.read();
     });
   }
 }
