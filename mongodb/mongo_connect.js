@@ -11,7 +11,7 @@ var USERCLASS = mongoose.model('user', schema);
 
 
 var person = {
-  use: 'bertie'
+  user: 'bertie'
 }
 var newUser = new USERCLASS(person);
 newUser.
