@@ -8,14 +8,15 @@ function process_data($scope, $http) {
   console.log('loading all data crud functions');
   
   $scope.read = function () {
-    console.log('getting list of people');
+    console.log('getting list of users');
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
         console.log('got list of people');
       });
   }
-  // now fire off the read function
+  
+  // now fire off the read function to get list of users
   $scope.read();
 
   $scope.create = function () {
