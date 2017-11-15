@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(routes);
 
 app.listen(port, listening);
-
 function listening() {
   console.log('now on localhost:' + port);
 }
