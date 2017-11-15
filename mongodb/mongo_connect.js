@@ -9,4 +9,8 @@ var schema = new mongoose.Schema({
 
 var USERCLASS = mongoose.model('user', schema);
 
+var newUser = new USERCLASS;
+
+newUser.
+
 module.exports = USERCLASS;
