@@ -7,7 +7,7 @@ front_app.controller('process_data', process_data);
 function process_data($scope, $http) {
   console.log('loading all data crud functions');
   
-  // 
+  // function to get list of users from backend
   $scope.read = function () {
     console.log('getting list of users');
     $http.get('/api/index')
@@ -17,7 +17,7 @@ function process_data($scope, $http) {
       });
   }
 
-  // now fire off the read function to get list of users
+  // now fire off the read function
   $scope.read();
 
   $scope.create = function () {
