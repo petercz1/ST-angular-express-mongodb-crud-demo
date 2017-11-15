@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var USER = require('../mongodb/mongo_connect');
+var USERCLASS = require('../mongodb/mongo_connect');
 
 module.exports = router;
 
@@ -15,7 +15,7 @@ function home_page(req, res) {
 }
 
 function get_all_data(req, res) {
-  USER.find()
+  USERCLASS.find()
     .then(function (result) {
       console.log(result);
       res.json(result);
@@ -29,7 +29,7 @@ function get_single_data(req, res) {
 function post_single_data(req, res) {
   console.log('posting backend');
   console.log(req.body);
-  var newUser = new USER(req.body);
+  var newUser = new USERCLASS(req.body);
   newUser.save()
     .then(function (err) {
       if (err) {
@@ -43,7 +43,7 @@ function post_single_data(req, res) {
 function put_data(req, res) {
   console.log('updating...');
   console.log(req.body);
-  USER.findByIdAndUpdate(req.body._id, {$set: {user: req.body.user}},function (err, data) {
+  USERCLASS.findByIdAndUpdate(req.body._id, {$set: {user: req.body.user}},function (err, data) {
     if(err) return err;
     console.log('updated!');
     res.send('backend updated!');
@@ -53,7 +53,7 @@ function put_data(req, res) {
 function delete_data(req, res) {
   console.log('deleting...');
   console.log(req.params);
-  USER.findByIdAndRemove(req.params._id, function (err, data) {
+  USERCLASS.findByIdAndRemove(req.params._id, function (err, data) {
     if(err) return err;
     console.log('deleted!'); 
     res.send('backend deleted');   

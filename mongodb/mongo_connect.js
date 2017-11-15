@@ -7,6 +7,6 @@ var schema = new mongoose.Schema({
     user: String
   });
 
-var User = mongoose.model('user', schema);
+var USERCLASS = mongoose.model('user', schema);
 
-module.exports = User;
+module.exports = USERCLASS;
