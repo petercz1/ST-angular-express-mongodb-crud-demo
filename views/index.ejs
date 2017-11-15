@@ -15,7 +15,7 @@
     <h1>CRUD demo AngularJS/Express/MongoDB</h1>
 
     <div ng-controller="process_data">
-        <h3>Message: {{message}}</h3>
+        <textarea>Message: {{message}}</textarea>
         <div>
             <input type="text" name="user" ng-model="input_name">
             <input type="submit" value="submit" ng-click='create()'>
@@ -39,7 +39,7 @@
                     <td><button ng-click="update(person)">update</button></td>
                     <td><button ng-click="delete(person)">delete</button></td>
                 </tr>
-                
+
             </tbody>
 
         </table>
