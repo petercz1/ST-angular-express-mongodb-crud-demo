@@ -1,9 +1,11 @@
 body{
   padding: 0 5em;
 }
+
 table{
   width: 100%;
 }
+
 th,
 td {
   padding: 1em;
