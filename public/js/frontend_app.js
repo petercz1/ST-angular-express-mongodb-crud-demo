@@ -13,7 +13,7 @@ function process_data($scope, $http) {
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
-        $scope.message = 'got list of people';
+        $scope.message = "got list of people\n" + $scope.message;
       });
   }
   $scope.read();
@@ -24,7 +24,8 @@ function process_data($scope, $http) {
     }
     $http.post('/api/index', data)
       .then(function (response) {
-        $scope.message = response;
+        $scope.message = response + "\n" + $scope.message;
+      });;
         console.log(response);
         $scope.read();
       });
