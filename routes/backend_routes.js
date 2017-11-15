@@ -30,6 +30,7 @@ function post_single_data(req, res) {
   console.log('posting backend');
   console.log(req.body);
   var newUser = new USERCLASS(req.body);
+  new
   newUser.save()
     .then(function (err) {
       if (err) {
