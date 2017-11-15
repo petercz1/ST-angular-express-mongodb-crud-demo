@@ -5,11 +5,10 @@ var front_app = angular.module('demo_app', []);
 front_app.controller('process_data', process_data);
 
 function process_data($scope, $http) {
-  console.log($scope);
-  console.log('listing data');
+  console.log('loading all data crud functions');
   $scope.message = 'good morning.';
   
-  $scope.get = function () {
+  $scope.read = function () {
     console.log('running scope.get...');
     $http.get('/api/index')
       .then(function (people) {
@@ -19,6 +18,7 @@ function process_data($scope, $http) {
       });
   }
   $scope.get();
+
   $scope.create = function () {
     var data = {
       user: $scope.input_name,
