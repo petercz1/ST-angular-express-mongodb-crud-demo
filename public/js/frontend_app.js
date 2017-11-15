@@ -13,7 +13,6 @@ function process_data($scope, $http) {
     $http.get('/api/index')
       .then(function (people) {
         $scope.people = people.data;
-        console.log($scope.people);
         $scope.message = 'got list of people';
       });
   }
