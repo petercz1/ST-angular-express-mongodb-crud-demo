@@ -36,8 +36,7 @@ function process_data($scope, $http) {
     console.log(person);
     $http.put('/api/index', person)
       .then(function (response) {
-        console.log(response);
-        $scope.message = 'updated user';
+        $scope.message = response;
         $scope.read();
       })
       .then(function (err) {
@@ -51,9 +50,7 @@ function process_data($scope, $http) {
     console.log('deleting...');
     console.log(person);
     $http.delete('/api/index/' + person._id).then(function (response) {
-      console.log(response);
-      console.log('deleted?');
-      $scope.message = 'deleted user';
+      $scope.message = response;
       $scope.read();
     });
   }
