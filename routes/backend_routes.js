@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var User = require('../mongodb/mongo_connect');
+var USER = require('../mongodb/mongo_connect');
 
 module.exports = router;
 
