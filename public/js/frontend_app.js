@@ -16,7 +16,6 @@ function process_data($scope, $http) {
         console.log('got list of users');
       });
   }
-
   // now fire off the read function
   $scope.read();
 
